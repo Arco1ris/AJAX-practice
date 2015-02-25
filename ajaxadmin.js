@@ -1,0 +1,11 @@
+$(document).ready(function(){
+   $("#btn").click(function(){
+       $("#result").text("请求数据中...");
+       $.get("AServer.php",{name:$("#namevalue").val()},function(data){
+           //alert("hello");
+    $("#result").text(data);      
+       }).error(function(){
+           $("#result").text("通讯错误");
+       });
+   });
+});
